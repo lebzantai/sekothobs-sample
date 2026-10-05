@@ -17,8 +17,8 @@
       --slate: #6d7c88;
       --gold: #c7842a;
       --gold-deep: #a66a1c;
-      --paper: #f4f1eb;
-      --paper-2: #ebe6dd;
+      --paper: #ffffff;
+      --paper-2: #f7f7f7;
       --white: #ffffff;
       --line: rgba(23, 48, 68, 0.12);
       --shadow: 0 18px 50px rgba(18, 50, 70, 0.12);
@@ -61,14 +61,13 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(244, 241, 235, 0.92);
-      backdrop-filter: blur(12px);
+      background: #ffffff;
       border-bottom: 1px solid var(--line);
     }
     .nav {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 12px 22px;
+      padding: 8px 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -77,10 +76,16 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
       text-decoration: none;
+      background: #ffffff;
+      line-height: 0;
     }
-    .brand img { height: 46px; width: auto; }
+    .brand img {
+      height: 72px;
+      width: auto;
+      background: #ffffff;
+      display: block;
+    }
     .nav-links {
       display: flex;
       gap: 22px;

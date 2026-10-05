@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sekothobs · Building contractors, Polokwane</title>
+  <meta name="description" content="Sekothobs is a black women-owned building contractor in Polokwane, Limpopo. New builds, alterations, and project management from Palm Centre." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,460;8..60,560&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #173044;
+      --ink-soft: #3d5364;
+      --blue: #1c6288;
+      --blue-deep: #123246;
+      --slate: #6d7c88;
+      --gold: #c7842a;
+      --gold-deep: #a66a1c;
+      --paper: #f4f1eb;
+      --paper-2: #ebe6dd;
+      --white: #ffffff;
+      --line: rgba(23, 48, 68, 0.12);
+      --shadow: 0 18px 50px rgba(18, 50, 70, 0.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Outfit", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .sample-bar {
+      background: var(--blue-deep);
+      color: #e7eef3;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      padding: 10px 20px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sample-bar strong { color: #f0c27a; font-weight: 600; }
+    .sample-bar button {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(244, 241, 235, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .brand img { height: 46px; width: auto; }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-links a { text-decoration: none; color: var(--ink-soft); }
+    .nav-links a:hover { color: var(--ink); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-radius: 999px;
+      padding: 13px 20px;
+    }
+    .btn-gold { background: var(--gold); color: #1b1408; }
+    .btn-gold:hover { background: #d39234; }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .btn-line {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+    }
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      color: #fff;
+      display: grid;
+      align-items: end;
+      background: #102838 center/cover no-repeat;
+      isolation: isolate;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(12, 28, 40, 0.25) 0%, rgba(12, 28, 40, 0.28) 40%, rgba(10, 24, 34, 0.88) 100%);
+      z-index: -1;
+    }
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 72px 22px 56px;
+      width: 100%;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: #f0c27a;
+      margin-bottom: 18px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--gold);
+    }
+    h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 460;
+      font-size: clamp(42px, 7vw, 86px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 0 0 18px;
+      max-width: 12ch;
+    }
+    .lede {
+      max-width: 38rem;
+      font-size: 18px;
+      color: rgba(255,255,255,0.86);
+      margin: 0 0 28px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .facts {
+      max-width: 1120px;
+      margin: -28px auto 0;
+      padding: 0 22px;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .fact {
+      background: var(--white);
+      padding: 22px 22px 20px;
+    }
+    .fact span {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      margin-bottom: 6px;
+    }
+    .fact strong { font-weight: 600; font-size: 18px; }
+    section { padding: 88px 22px; }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .kicker {
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--gold-deep);
+      margin: 0 0 12px;
+    }
+    h2 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 460;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+    }
+    .muted { color: var(--ink-soft); }
+    .about-photo {
+      position: relative;
+    }
+    .about-photo img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+    }
+    .caption {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      background: rgba(18, 50, 70, 0.88);
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 12px;
+    }
+    .sepedi {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 22px;
+      color: var(--blue-deep);
+    }
+    .services { background: var(--white); }
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      gap: 18px;
+      margin-top: 36px;
+    }
+    .card {
+      background: var(--paper);
+      padding: 26px 24px 28px;
+      min-height: 220px;
+      border-top: 3px solid var(--gold);
+    }
+    .card.feature {
+      background: var(--blue-deep);
+      color: #fff;
+      border-top-color: var(--gold);
+      min-height: 100%;
+    }
+    .card.feature p { color: rgba(255,255,255,0.78); }
+    .num {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .card h3 { margin: 0 0 10px; font-size: 22px; font-weight: 600; }
+    .card p { margin: 0; color: var(--ink-soft); }
+    .work {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .work figure { margin: 0; background: var(--white); }
+    .work img { width: 100%; height: 320px; object-fit: cover; }
+    .work figcaption { padding: 14px 16px 16px; font-size: 14px; color: var(--ink-soft); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .step {
+      padding-top: 16px;
+      border-top: 1px solid var(--ink);
+    }
+    .step b { display: block; margin-bottom: 8px; }
+    .contact {
+      background:
+        linear-gradient(160deg, #123246 0%, #1c6288 70%);
+      color: #fff;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+    }
+    .contact a { color: #f0c27a; }
+    form {
+      background: #fff;
+      color: var(--ink);
+      padding: 28px;
+      display: grid;
+      gap: 12px;
+    }
+    label { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      font: inherit;
+      padding: 12px 12px;
+      color: var(--ink);
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .addr { margin-top: 22px; color: rgba(255,255,255,0.82); }
+    footer {
+      padding: 28px 22px 90px;
+      background: #0e2432;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+    }
+    .foot {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .wordmark {
+      letter-spacing: 0.42em;
+      font-size: 13px;
+      color: #fff;
+    }
+    .wa {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 30;
+      background: #1f8f4e;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 14px 18px;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .note {
+      font-size: 13px;
+      color: var(--slate);
+      margin-top: 18px;
+    }
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .facts, .split, .service-grid, .work, .steps, .contact-grid { grid-template-columns: 1fr; }
+      .about-photo img, .work img { height: 240px; }
+      section { padding: 64px 18px; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sample-bar" id="sampleBar">
+    <span>Sample website prepared by <strong>Symmetra</strong> for Sekothobs. Not live yet — details can be corrected before anything is published.</span>
+    <button type="button" onclick="document.getElementById('sampleBar').remove()">Hide</button>
+  </div>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#top">
+        <img src="images/logo.png" alt="Sekothobs SKT logo" />
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Work</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-gold" href="https://wa.me/27823123461?text=Hi%20Sekothobs%2C%20I%20would%20like%20a%20quote%20for%20a%20building%20job%20in%20Polokwane.">WhatsApp a quote</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" style="background-image:url('images/site.jpg')">
+      <div class="hero-inner">
+        <p class="eyebrow">Polokwane · Limpopo</p>
+        <h1>Built with a steady hand.</h1>
+        <p class="lede">Sekothobs is a black women-owned building contractor. New work, alterations, and the day-to-day management that keeps a site moving — from Palm Centre, Grobler Street.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#contact">Request a quote</a>
+          <a class="btn btn-ghost" href="tel:+27823123461">082 312 3461</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="facts">
+      <div class="fact">
+        <span>Ownership</span>
+        <strong>Black women-owned</strong>
+      </div>
+      <div class="fact">
+        <span>Leadership</span>
+        <strong>BTech Construction Management</strong>
+      </div>
+      <div class="fact">
+        <span>Base</span>
+        <strong>Palm Centre, Polokwane</strong>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap split">
+        <div>
+          <p class="kicker">The company</p>
+          <h2>A contractor led from the drawings, not only the site.</h2>
+          <p class="muted">Sekothobs is listed as a building contractor in Polokwane. The director holds a BTech in Construction Management, and has studied toward an MSc in Project Management — the kind of training that shows up in programmes, cost control, and a site that does not drift.</p>
+          <p class="muted">The practice is based at Shop 3, Office 1, Palm Centre, 60 Grobler Street. Clients reach the office on 082 312 3461.</p>
+          <p class="sepedi">Re aga ka tlhokomelo.</p>
+          <p class="note">We build with care. Public details are thin — this page uses the company listing and the logo you sent. Project names, CIDB grade, and NHBRC status can be added once confirmed.</p>
+        </div>
+        <div class="about-photo">
+          <img src="images/detail.jpg" alt="Plaster and timber window detail in warm afternoon light" />
+          <span class="caption">Finish is the brief</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <p class="kicker">What the practice takes on</p>
+        <h2>Building work, held together.</h2>
+        <div class="service-grid">
+          <article class="card feature">
+            <div class="num">01</div>
+            <h3>General building</h3>
+            <p>New houses and small commercial structures in and around Polokwane. Foundations, structure, brickwork, roof, and the finishes that close the job.</p>
+          </article>
+          <article class="card">
+            <div class="num">02</div>
+            <h3>Alterations</h3>
+            <p>Extensions, remodelling, and repairs on buildings that are already lived in. Sequenced so the household or shop can keep operating.</p>
+          </article>
+          <article class="card">
+            <div class="num">03</div>
+            <h3>Project management</h3>
+            <p>Programme, trades, and cost watched from one desk. Useful when the client wants a builder who can also run the job.</p>
+          </article>
+        </div>
+        <div class="work" style="margin-top:18px">
+          <figure>
+            <img src="images/site.jpg" alt="House under construction in late light" />
+            <figcaption>Sample visual — not a Sekothobs project photograph. Swap in real site photos when you have them.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/home.jpg" alt="Completed single-storey home at dusk" />
+            <figcaption>The standard the logo already implies: clean lines, warm material, nothing decorative for its own sake.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="wrap">
+        <p class="kicker">How a job starts</p>
+        <h2>Four steps. No theatre.</h2>
+        <div class="steps">
+          <div class="step">
+            <b>01 · Call or WhatsApp</b>
+            <span class="muted">Tell us the stand, the building, and what has to change. A photo of the site helps.</span>
+          </div>
+          <div class="step">
+            <b>02 · Look</b>
+            <span class="muted">A site visit in Polokwane and nearby towns before a number is put on paper.</span>
+          </div>
+          <div class="step">
+            <b>03 · Quote</b>
+            <span class="muted">Scope, sequence, and a price you can hold against the work — not a verbal estimate.</span>
+          </div>
+          <div class="step">
+            <b>04 · Build</b>
+            <span class="muted">Trades coordinated, progress reported, snags closed before handover.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="kicker" style="color:#f0c27a">Talk to the office</p>
+          <h2>Send the job. We will answer on WhatsApp.</h2>
+          <p class="addr">
+            Sekothobs<br />
+            Shop 3, Office 1, Palm Centre<br />
+            60 Grobler Street<br />
+            Polokwane, 0699<br /><br />
+            <a href="tel:+27823123461">082 312 3461</a>
+          </p>
+        </div>
+        <form id="quoteForm">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" required placeholder="Your name" />
+          </div>
+          <div>
+            <label for="area">Area</label>
+            <input id="area" name="area" placeholder="Polokwane, Seshego, Mankweng…" />
+          </div>
+          <div>
+            <label for="job">Job</label>
+            <select id="job" name="job">
+              <option>New building</option>
+              <option>Alteration or extension</option>
+              <option>Repairs and maintenance</option>
+              <option>Project management</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div>
+            <label for="note">Notes</label>
+            <textarea id="note" name="note" placeholder="Size, timeline, anything already on the stand."></textarea>
+          </div>
+          <button class="btn btn-gold" type="submit">Open WhatsApp with this quote</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <span class="wordmark">SEKOTHOBS</span>
+      <span>Sample by Symmetra · lebo@symmetrasystems.co.za · Facts from the public Polokwane listing matching 082 312 3461.</span>
+    </div>
+  </footer>
+  <a class="wa" href="https://wa.me/27823123461?text=Hi%20Sekothobs%2C%20I%20would%20like%20to%20talk%20about%20a%20building%20job.">WhatsApp</a>
+  <script>
+    document.getElementById("quoteForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("name").value.trim();
+      var area = document.getElementById("area").value.trim();
+      var job = document.getElementById("job").value;
+      var note = document.getElementById("note").value.trim();
+      var text = "Hi Sekothobs, I would like a quote.%0AName: " + encodeURIComponent(name) +
+        "%0AArea: " + encodeURIComponent(area || "Polokwane") +
+        "%0AJob: " + encodeURIComponent(job) +
+        "%0ANotes: " + encodeURIComponent(note || "—");
+      window.open("https://wa.me/27823123461?text=" + text, "_blank");
+    });
+  </script>
+</body>
+</html>
